@@ -1,0 +1,52 @@
+{% extends "defect_register/base.html" %}
+{% load crispy_forms_tags %}
+
+<!-- Product_name,  PNC, Line, location_lvl01, Location_lvl02,Defect, Defect_weight, Defect_cat -->
+<!-- Count_units, Containment, Corrective, Operator, Notified, created_at, updated_at -->
+
+{% block content %}
+<form action="" method="post" autocomplete="on">
+    {%csrf_token%}
+    {{form.Product_name|as_crispy_field}}
+    {{form.PNC|as_crispy_field}}
+    <div class="row">
+        <div class="col-md-4">
+            {{form.Line|as_crispy_field}}
+            {{form.location_lvl01|as_crispy_field}}
+            {{form.Location_lvl02|as_crispy_field}}
+
+        </div>
+        <div class="col-md-4">
+            {{form.Defect|as_crispy_field}}
+            {{form.Defect_weight|as_crispy_field}}
+            {{form.Defect_cat|as_crispy_field}}
+        </div>
+        <div class="col-md-4">
+            {{form.Count_units|as_crispy_field}}
+            {{form.Containment|as_crispy_field}}
+            {{form.Corrective|as_crispy_field}}
+        </div>
+        <div class="col-md-6">
+            {{form.Operator|as_crispy_field}}
+        </div>
+        <div class="col-md-6">
+            {{form.Notified|as_crispy_field}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <button type="submit" class="btn btn-success" >
+                <i class="fa-solid fa-database"></i>
+                submit        
+            </button>
+        </div>
+        <div class="col-md-4">
+            <a href="{% url 'defects_list' %}" class="btn btn-secondary btn-block btn-lg">
+                <i class="fas fa-stream"></i> Back to list
+            </a>
+        </div>
+    </div>
+    
+</form>
+
+{% endblock content %}

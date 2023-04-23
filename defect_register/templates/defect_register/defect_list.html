@@ -1,0 +1,57 @@
+{% extends "defect_register/base.html" %}
+<!-- Product_name,  PNC, Line, location_lvl01, Location_lvl02,Defect, Defect_weight, Defect_cat --> 
+<!-- Count_units, Containment, Corrective, Operator, Notified, created_at, updated_at border-bottom -->
+
+{% block content %}
+<table class="table table-sm text-xsmall">
+    <thead style=font-size:12px class="font-weight-bold">
+            <tr>
+                <td>Product_name</td>
+                <td>PNC</td>
+                <td>Line</td>
+                <td>location_lvl01</td>
+                <td>Location_lvl02</td>
+                <td>Defect</td>
+                <td>Defect_weight</td>
+                <td>Defect_cat</td>
+                <td>Count_units</td>
+                <td>Containment</td>
+                <td>Corrective</td>
+                <td>Operator</td>
+                <td>Notified</td>
+                <td>created_at</td>
+                <td>
+                    <a href="{% url 'defect_insert' %}" class="btn btn-outline-success">
+                        <i class="fas fa-plus"></i>
+                        Add New
+                    </a>
+                </td>
+            </tr>
+    </thead>
+    <tbody style=font-size:12px>
+        {% for defect in defect_list %}
+            <tr>
+                <td>{{defect.Product_name}}</td>
+                <td>{{defect.PNC}}</td>
+                <td>{{defect.Line}}</td>
+                <td>{{defect.location_lvl01}}</td>
+                <td>{{defect.Location_lvl02}}</td>
+                <td>{{defect.Defect}}</td>
+                <td>{{defect.Defect_weight}}</td>
+                <td>{{defect.Defect_cat}}</td>
+                <td>{{defect.Count_units}}</td>
+                <td>{{defect.Containment}}</td>
+                <td>{{defect.Corrective}}</td>
+                <td>{{defect.Operator}}</td>
+                <td>{{defect.Notified}}</td>
+                <td>{{defect.created_at}}</td>
+                <td>
+                    <a href="" class="btn.text-secondary px-0">
+                        <i class="far fa-edit fa-lg"></i>
+                    </a>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock content %}
