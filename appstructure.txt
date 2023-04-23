@@ -1,0 +1,21 @@
+● defect_project
+|
++---● defect_register (app folder)
+|   |
+|   +--● migrations (includes files related to migrations)
+|   |  
+|   +--● templates
+|   |  |--● defect_register
+|   |  |  |--base.html
+|   |  |  |--defect_form.html
+|   |  |  |--defect_list.html
+|   | 
+|   |-- models.py
+|   |-- forms.py
+|   |-- urls.py
+|   |-- views.py
+|
++---● defect_project (project folder)
+|   |
+|   |--settings.py 
+|   |--urls.py
